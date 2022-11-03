@@ -1,20 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Taschenrechner
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+<ion-content>
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card>
+      <ion-grid>
+      <ion-row>
+        <ion-col size="9">
+          <input type="text" [value]="currentNumber" disabled />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3"><ion-button (click) = "getOperation('+')">+</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getOperation('-')">-</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getOperation('*')">&times;</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getOperation('/')">&divide;</ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3"><ion-button (click) = "getNumber('7')">7</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getNumber('8')">8</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getNumber('9')">9</ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3"><ion-button (click) = "getNumber('4')">4</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getNumber('5')">5</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getNumber('6')">6</ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3"><ion-button (click) = "getNumber('1')">1</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getNumber('2')">2</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getNumber('3')">3</ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3"><ion-button (click) = "getNumber('0')">0</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getDecimal()">.</ion-button></ion-col>
+        <ion-col size="3"><ion-button color="danger" (click) = "clear()">AC</ion-button></ion-col>
+        <ion-col size="3"><ion-button (click) = "getOperation('=')">=</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
   </div>
 </ion-content>
